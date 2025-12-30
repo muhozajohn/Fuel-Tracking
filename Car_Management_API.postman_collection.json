@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "car-management-api",
+		"name": "Car Management & Fuel Tracking API",
+		"description": "Collection for testing Car Management REST API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cars",
+			"item": [
+				{
+					"name": "Create Car",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"brand\": \"Toyota\",\n  \"model\": \"Corolla\",\n  \"year\": 2018\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars"
+							]
+						},
+						"description": "Create a new car with brand, model, and year"
+					},
+					"response": []
+				},
+				{
+					"name": "List All Cars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars"
+							]
+						},
+						"description": "Get a list of all cars"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Fuel Entry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"liters\": 40,\n  \"price\": 52.5,\n  \"odometer\": 45000\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cars/1/fuel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"1",
+								"fuel"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "Car ID"
+								}
+							]
+						},
+						"description": "Add a fuel entry for a specific car. Replace {id} with the actual car ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fuel Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars/1/fuel/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"1",
+								"fuel",
+								"stats"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "Car ID"
+								}
+							]
+						},
+						"description": "Get fuel statistics for a specific car. Returns total fuel, total cost, and average consumption in L/100km."
+					},
+					"response": []
+				}
+			],
+			"description": "Car management endpoints"
+		},
+		{
+			"name": "Servlet",
+			"item": [
+				{
+					"name": "Get Fuel Stats (Servlet)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/servlet/fuel-stats?carId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servlet",
+								"fuel-stats"
+							],
+							"query": [
+								{
+									"key": "carId",
+									"value": "1",
+									"description": "Car ID"
+								}
+							]
+						},
+						"description": "Servlet endpoint to get fuel statistics. Demonstrates manual servlet implementation with query parameter parsing."
+					},
+					"response": []
+				}
+			],
+			"description": "Servlet endpoint"
+		},
+		{
+			"name": "Error Handling Tests",
+			"item": [
+				{
+					"name": "Get Stats - Invalid Car ID (404)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars/999/fuel/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"999",
+								"fuel",
+								"stats"
+							]
+						},
+						"description": "Test error handling for non-existent car ID. Should return 404."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Car - Invalid Data (400)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"brand\": \"\",\n  \"model\": \"Corolla\",\n  \"year\": 2018\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars"
+							]
+						},
+						"description": "Test validation error handling. Should return 400 for empty brand."
+					},
+					"response": []
+				},
+				{
+					"name": "Add Fuel - Invalid Car ID (404)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"liters\": 40,\n  \"price\": 52.5,\n  \"odometer\": 45000\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cars/999/fuel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"999",
+								"fuel"
+							]
+						},
+						"description": "Test error handling for adding fuel to non-existent car. Should return 404."
+					},
+					"response": []
+				}
+			],
+			"description": "Test error handling scenarios"
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
+
