@@ -1,4 +1,4 @@
-package com.aem.academy.backend.api;
+package backend.api;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

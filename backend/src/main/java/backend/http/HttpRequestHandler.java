@@ -1,6 +1,6 @@
-package com.aem.academy.backend.http;
+package backend.http;
 
-import com.aem.academy.backend.api.RestApiHandler;
+import backend.api.RestApiHandler;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 

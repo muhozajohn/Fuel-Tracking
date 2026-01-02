@@ -1,9 +1,9 @@
-package com.aem.academy.backend;
+package backend;
 
-import com.aem.academy.backend.api.RestApiHandler;
-import com.aem.academy.backend.http.HttpRequestHandler;
-import com.aem.academy.backend.service.CarService;
-import com.aem.academy.backend.servlet.FuelStatsServlet;
+import backend.api.RestApiHandler;
+import backend.http.HttpRequestHandler;
+import backend.service.CarService;
+import backend.servlet.FuelStatsServlet;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.HandlerList;

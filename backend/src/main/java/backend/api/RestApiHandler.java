@@ -1,13 +1,12 @@
-package com.aem.academy.backend.api;
+package backend.api;
 
-import com.aem.academy.backend.model.Car;
-import com.aem.academy.backend.model.FuelStats;
-import com.aem.academy.backend.service.CarService;
+import backend.model.Car;
+import backend.model.FuelStats;
+import backend.service.CarService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class RestApiHandler {

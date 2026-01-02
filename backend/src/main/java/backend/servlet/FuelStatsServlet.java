@@ -1,7 +1,7 @@
-package com.aem.academy.backend.servlet;
+package backend.servlet;
 
-import com.aem.academy.backend.model.FuelStats;
-import com.aem.academy.backend.service.CarService;
+import backend.model.FuelStats;
+import backend.service.CarService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.servlet.http.HttpServlet;
