@@ -16,7 +16,9 @@ buildNumber.properties
 .classpath
 .project
 .settings/
-.vscode/
+*.swp
+*.swo
+*~
 
 # Compiled files
 *.class
@@ -29,8 +31,30 @@ buildNumber.properties
 
 # Logs
 *.log
+logs/
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# System files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+
+# GUILE
+JAVA_LEARNING_GUIDE.md
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

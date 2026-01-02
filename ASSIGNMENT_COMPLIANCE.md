@@ -137,18 +137,43 @@ Average consumption: 6.4 L/100km
 
 ## Project Structure
 
+
 ```
 challenge/
-├── backend/              # Backend REST API & Servlet
-│   ├── api/             # REST API handlers
-│   ├── http/            # HTTP routing
-│   ├── model/           # Domain models
-│   ├── service/         # Business logic (shared)
-│   ├── servlet/         # Servlet implementation
-│   └── Server.java      # Main server
-├── cli/                  # CLI client
-│   └── CliApplication.java
-└── pom.xml              # Parent POM
+├── backend/                    # Backend REST API & Servlet
+│   ├── src/main/java/
+│   │   └── backend/
+│   │       ├── api/           # REST API handlers & DTOs
+│   │       │   ├── AddFuelRequest.java
+│   │       │   ├── CreateCarRequest.java
+│   │       │   └── RestApiHandler.java
+│   │       ├── http/          # HTTP request routing
+│   │       │   └── HttpRequestHandler.java
+│   │       ├── model/         # Domain models
+│   │       │   ├── Car.java
+│   │       │   ├── FuelEntry.java
+│   │       │   └── FuelStats.java
+│   │       ├── service/       # Business logic
+│   │       │   └── CarService.java
+│   │       ├── servlet/       # Manual servlet implementation
+│   │       │   └── FuelStatsServlet.java
+│   │       └── Server.java    # Main server class
+│   └── pom.xml
+├── cli/                        # CLI client application
+│   ├── src/main/java/
+│   │   └── cli/
+│   │       ├── model/         # Response models
+│   │       │   └── FuelStatsResponse.java
+│   │       └── CliApplication.java
+│   └── pom.xml
+├── mvnw / mvnw.cmd            # Maven wrapper (no Maven install needed)
+├── START_SERVER.sh / .bat     # Helper scripts to start server
+├── STOP_SERVER.sh / .bat      # Helper scripts to stop server
+├── KILL_JAVA.bat              # Helper script to kill Java processes
+├── pom.xml                    # Parent POM
+├── README.md                  # This file
+├── ASSIGNMENT_COMPLIANCE.md   # Assignment compliance report
+└── Car_Management_API.postman_collection.json  # Postman collection
 ```
 
 ---
