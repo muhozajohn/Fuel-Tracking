@@ -1,18 +1,11 @@
-package com.aem.academy.backend.api;
+package backend.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class AddFuelRequest {
+public class FuelEntry {
     private final Double liters;
     private final Double price;
     private final Integer odometer;
 
-    @JsonCreator
-    public AddFuelRequest(
-            @JsonProperty("liters") Double liters,
-            @JsonProperty("price") Double price,
-            @JsonProperty("odometer") Integer odometer) {
+    public FuelEntry(Double liters, Double price, Integer odometer) {
         this.liters = liters;
         this.price = price;
         this.odometer = odometer;

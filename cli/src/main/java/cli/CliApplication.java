@@ -1,6 +1,6 @@
-package com.aem.academy.cli;
+package cli;
 
-import com.aem.academy.cli.model.FuelStatsResponse;
+import cli.model.FuelStatsResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.net.URI;

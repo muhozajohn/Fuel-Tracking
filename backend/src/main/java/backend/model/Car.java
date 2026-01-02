@@ -1,4 +1,4 @@
-package com.aem.academy.backend.model;
+package backend.model;
 
 import java.util.ArrayList;
 import java.util.List;

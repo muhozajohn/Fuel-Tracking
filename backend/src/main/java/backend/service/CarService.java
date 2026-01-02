@@ -1,8 +1,8 @@
-package com.aem.academy.backend.service;
+package backend.service;
 
-import com.aem.academy.backend.model.Car;
-import com.aem.academy.backend.model.FuelEntry;
-import com.aem.academy.backend.model.FuelStats;
+import backend.model.Car;
+import backend.model.FuelEntry;
+import backend.model.FuelStats;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

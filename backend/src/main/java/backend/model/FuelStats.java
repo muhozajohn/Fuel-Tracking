@@ -1,4 +1,4 @@
-package com.aem.academy.backend.model;
+package backend.model;
 
 public class FuelStats {
     private final Double totalFuel;
